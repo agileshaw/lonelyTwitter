@@ -41,14 +41,25 @@ public class LonelyTwitterActivity extends Activity {
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
 				finish();
-
+ 
 			}
 		});
 	}
 
 	@Override
-	protected void onStart() {
-		// TODO Auto-generated method stub
+	protected void onStart() throws IOException {
+		
+		// if change User to Object, return error since Object do no have setName
+        User u = new Author("joe");
+        try {
+        	u.setName("joe2");
+        } catch (/*RuntimeException or*/IOException e) {
+        	//some code that tells the user to use a shorter name
+            e.printStackTrace();
+        }
+		
+        ArrayList<User> x = new ArrayList<User>();
+        
 		super.onStart();
 		String[] tweets = loadFromFile();
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
