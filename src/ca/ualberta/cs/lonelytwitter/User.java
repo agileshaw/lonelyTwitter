@@ -14,7 +14,7 @@ public abstract class User extends Object implements UserLike
 	}
 
 	
-	public abstract void setName(String x) throw IOException;
+	//public abstract void setName(String x) throw IOException;
 	
 	/*{
 	    // use this to indicate setName name, not private string name

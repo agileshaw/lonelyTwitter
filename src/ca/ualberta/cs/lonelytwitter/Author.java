@@ -1,6 +1,6 @@
 package ca.ualberta.cs.lonelytwitter;
 
-
+/*
 public class Author extends User{
 	
 	public Author() {
@@ -19,4 +19,4 @@ public class Author extends User{
 
 
 
-}
+}*/

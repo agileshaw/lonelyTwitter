@@ -4,5 +4,5 @@ import java.io.IOException;
 
 public interface UserLike
 {
-	public void setName(Sting x) throws IOException;
+	//public void setName(Sting x) throws IOException;
 }

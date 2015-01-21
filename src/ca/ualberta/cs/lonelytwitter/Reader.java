@@ -1,6 +1,6 @@
 package ca.ualberta.cs.lonelytwitter;
 
-
+/*
 public class Reader extends User
 {
 	private static Boolean enabled = false;
@@ -14,3 +14,4 @@ public class Reader extends User
 	
 	
 }
+*/
