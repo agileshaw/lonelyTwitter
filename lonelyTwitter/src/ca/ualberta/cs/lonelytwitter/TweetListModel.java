@@ -34,4 +34,5 @@ private ArrayList<LonelyTweetModel> tweetList;
 		tweetList.remove(tweet);
 	}
 	
+	
 }
