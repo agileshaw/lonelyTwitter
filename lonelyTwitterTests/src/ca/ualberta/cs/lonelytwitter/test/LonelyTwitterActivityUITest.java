@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import ca.ualberta.cs.lonelytwitter.IntentReaderActivity;
 import ca.ualberta.cs.lonelytwitter.LonelyTwitterActivity;
 import ca.ualberta.cs.lonelytwitter.NormalTweetModel;
 
@@ -34,6 +35,22 @@ public class LonelyTwitterActivityUITest extends
 		textInput = ((EditText) activity.findViewById(ca.ualberta.cs.lonelytwitter.R.id.body));
 	}
 	
+	public void testSetText()
+	{
+		String text = "neat!";
+		instrumentation.runOnMainSync(new Runnable(){
+			@Override
+			public void run(){
+				textInput.setText("neat!");
+				
+			}
+		});
+		
+		instrumentation.waitForIdleSync();		
+
+		assertEquals("Does this work?", text, textInput.getText().toString());
+	}
+	
 	/*
 	 * fills in the input text field and clicks the 'save'
 	 * button for the activity under test
@@ -42,5 +59,10 @@ public class LonelyTwitterActivityUITest extends
 		assertNotNull(activity.findViewById(ca.ualberta.cs.lonelytwitter.R.id.save));
 		textInput.setText(text);
 		((Button) activity.findViewById(ca.ualberta.cs.lonelytwitter.R.id.save)).performClick();
+		String newTweet = "Hello!";
+		IntentReaderActivity activity = startwithText(newTweet, IntentReaderActivity.NORMAL);
+		assertNotNull(activity.getText());
+		
+		
 	}
 }
